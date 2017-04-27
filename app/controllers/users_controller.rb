@@ -9,12 +9,26 @@ class UsersController < ApplicationController
 
   def create
     # render plain: params[:user].inspect
-    @user = User.new(post_params)
+    @user = User.new(entry_params)
 
     if(@user.save)
       redirect_to home_url
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:format])
+  end
+
+  def update
+    @user = User.find(params[:format])
+
+    if(@user.update(entry_params))
+      redirect_to users_url(@user)
+    else
+      render 'edit'
     end
   end
 
@@ -24,7 +38,7 @@ class UsersController < ApplicationController
     redirect_to home_url
   end
 
-  private def post_params
+  private def entry_params
     params.require(:user).permit(:first_name, :last_name, :email)
   end
 end
