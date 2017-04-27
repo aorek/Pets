@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'home#index', as: 'home_path'
+  root 'home#index', as: 'home'
 
-  # get 'home/index'
+  resource :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
