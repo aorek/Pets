@@ -1,10 +1,33 @@
-<div class="col-md-6 col-md-offset-3 ">
+<div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Users</h3>
+      <%= link_to "Add new user", "users/new", {:class => 'btn btn-info btn-xs pull-right'} %>
+      <h3 class="panel-title">Users </h3>
     </div>
     <div class="panel-body">
-      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>User</td>
+            <td class="pull-right">Options</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.first_name %> <%= user.last_name %></td>
+              <td>
+                <%= link_to users_url(user), :class => 'btn btn-warning btn-xs col-xs-offset-8' do %>
+                  <i class="glyphicon glyphicon-edit"></i>
+                <% end %>
+                <%= link_to users_url(user), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger btn-xs pull-right' do %>
+                  <i class="glyphicon glyphicon-trash"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
