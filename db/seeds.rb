@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-PetType.create :type_name => 'Dog'
-PetType.create :type_name => 'Rat'
-PetType.create :type_name => 'Cat'
-PetType.create :type_name => 'Chinchilla'
+PetType.create :id => 1, :type_name => 'Dog'
+PetType.create :id => 2, :type_name => 'Rat'
+PetType.create :id => 3, :type_name => 'Cat'
+PetType.create :id => 4, :type_name => 'Chinchilla'
