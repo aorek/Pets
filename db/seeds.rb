@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+PetType.create :type_name => 'Dog'
+PetType.create :type_name => 'Rat'
+PetType.create :type_name => 'Cat'
+PetType.create :type_name => 'Chinchilla'
