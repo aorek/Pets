@@ -21,7 +21,7 @@
 
     <p>
       <%= f.label :type %><br>
-      <%= f.text_field(:type, {:class => 'form-control'}) %>
+      <%= f.collection_select(:pet_type_id, PetType.all, :id, :name_type, {prompt: true}, {class: 'form-control'}) %>
     </p>
 
     <div class="row">
