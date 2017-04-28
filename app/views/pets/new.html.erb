@@ -1,0 +1,52 @@
+<div class="col-md-6 col-md-offset-3">
+  <h3>New pet: </h3>
+
+  <%= form_for :pet, url: pets_url do |f| %>
+    <% if @pet.errors.any? %>
+      <% @pet.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+          <%= msg %>
+        </div>
+      <% end %>
+    <% end %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field(:name, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+      <%= f.label :age %><br>
+      <%= f.number_field(:age, {:class => 'form-control', value: 0}) %>
+    </p>
+
+    <p>
+      <%= f.label :type %><br>
+      <%= f.text_field(:type, {:class => 'form-control'}) %>
+    </p>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.label :gender %><br>
+        <div class="radio_button">
+          <%= f.radio_button(:gender, "male", {checked: true}) %>
+          <%= f.label(:gender_male, "Male") %><br>
+          <%= f.radio_button(:gender, "female") %>
+          <%= f.label(:gender_female, "Female") %>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <%= f.label :alive %><br>
+        <div class="radio_button">
+          <%= f.radio_button(:alive, true, {checked: true}) %>
+          <%= f.label(:alive_true, "Yes") %><br>
+          <%= f.radio_button(:alive, false) %>
+          <%= f.label(:alive_false, "No") %>
+        </div>
+      </div>
+    </div><br>
+
+    <p>
+      <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+  <% end %>
+</div>

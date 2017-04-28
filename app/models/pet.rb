@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
   belongs_to :user
+  # validates :name, :, :email, presence: true
   validate :pet_count, :on => :create
 
   def pet_count
