@@ -19,11 +19,15 @@ Queremos poder hacer un seguimiento de las mascotas de nuestro equipo de desarro
 
   `$ rake db:setup`
 
+  Este comando ejecuta rake db:migrate y rake db:seed.
+
 ### Destacados
 
 * Modelo de base de datos.
 * Datos extraidos de la base de datos, como en el caso de las opciones del tipo
-de mascota.
+de mascota para el formulario.
+* Validación de datos.
+* Diseño sencillo e intuitivo.
 
 ### Mejoras
 
