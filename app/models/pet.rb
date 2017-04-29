@@ -6,7 +6,7 @@ class Pet < ApplicationRecord
 
   def pet_count
     if self.user.pets(:reload).count >= 5
-      errors.add(:base, "Exceeded pet limit")
+      errors.add(:base, "The user can only have 5 pets.")
     end
   end
 end
